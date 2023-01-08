@@ -34,7 +34,7 @@ function HomeLayout() {
   const [contractInstance, setContractInstance] = useState("");
   const [numberOfContainers, setNumberOfContainers] = useState(0);
   const [loading, setLoading] = useState(false);
-  const owner = "0xcE39C4adA9e64d1711A56313ac464a4cbe995a44";
+  const owner = process.env.OWNER;
 
   // Wallet connection logic
   const isWalletConnected = async () => {
@@ -177,8 +177,9 @@ function HomeLayout() {
       const provider = new ethers.providers.Web3Provider(ethereum, "any");
       const signer = provider.getSigner();
 
-      // const CONTRACT_ADDRESS = "0x9aCA96ad60a5f4E6118BD0eDFff75717649DF2BC";
-      const CONTRACT_ADDRESS = "0xBB668385B9A599Cba24E3e87ca4c3863DbD963F6";
+      const CONTRACT_ADDRESS = process.env.CONTRACT_ADDRESS;
+
+      console.log("coadd" + CONTRACT_ADDRESS);
       const supplyChainContract = new ethers.Contract(
         CONTRACT_ADDRESS,
         abi.abi,
