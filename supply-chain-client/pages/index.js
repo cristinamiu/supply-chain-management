@@ -8,6 +8,10 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   return (
     <div className="content">
+      <Head>
+        <title>Supply Chain Client</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <HomeLayout />
     </div>
   );
