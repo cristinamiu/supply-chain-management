@@ -16,8 +16,8 @@ export async function prepareSupplyChain() {
 function getContractInstance(signer) {
   const contract = require("./SupplyChainManagement.json");
 
-  // const CONTRACT_ADDRESS = "0x9aCA96ad60a5f4E6118BD0eDFff75717649DF2BC";
-  const CONTRACT_ADDRESS = "0xBB668385B9A599Cba24E3e87ca4c3863DbD963F6";
+  // const CONTRACT_ADDRESS = "0xBB668385B9A599Cba24E3e87ca4c3863DbD963F6";
+  const CONTRACT_ADDRESS = process.env.CONTRACT_ADDRESS;
   const supplyChainContract = new ethers.Contract(
     CONTRACT_ADDRESS,
     contract.abi,
@@ -30,7 +30,7 @@ function getContractInstance(signer) {
 
 function getSigner(provider) {
   const signer = new ethers.Wallet(
-    "2004dc7407862933f27e48ae9f2295c1a95acd4acd555a935905cb4d3f1cf215",
+    process.env.PRIVATE_KEY, // METAMASK ACCOUNT PRIVATE KEY
     provider
   );
 
@@ -43,7 +43,7 @@ function getAlchemyProvider() {
 
   const provider = new ethers.providers.AlchemyProvider(
     network,
-    "ZH8f9pS0AzbcIdD1YCuuU-yb5bx0KMbo"
+    process.env.ALCHEMY_API_KEY
   );
 
   console.log(provider);

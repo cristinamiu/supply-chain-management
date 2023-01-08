@@ -276,7 +276,7 @@ function HomeLayout() {
                             "Paid" ? (
                             <></>
                           ) : (
-                            <div className=" col-md-6">
+                            <div>
                               <button
                                 className="btn btn-success btn-block"
                                 onClick={() => handleDeliveryState(key)}
@@ -348,7 +348,7 @@ function HomeLayout() {
                               "Paid" ? (
                               <></>
                             ) : (
-                              <div className=" col-md-6">
+                              <div>
                                 <button
                                   className="btn btn-success btn-block"
                                   onClick={() => handleDeliveryState(key)}

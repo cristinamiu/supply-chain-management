@@ -60,7 +60,7 @@ export default function CreateContainer() {
                 <input
                   className="form-control"
                   type="text"
-                  name="cost"
+                  name="price"
                   onChange={handleInputChange}
                 ></input>
               </div>
